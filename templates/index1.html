@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HashOO!!</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <!-- <script type="text/javascript" src="/scripting.js"></script> -->
+</head>
+<body>
+    
+    <header>
+        <h2>Simple Hashing Algorithm</h2>
+    </header>
+
+    <div id="info">
+        <p>
+            Hashing is a fundamental concept used to convert data of any <br> 
+            size into a fixed-size string of characters, typically for indexing, <br> security, or data
+             integrity purposes. It's like a fingerprint for data, <br> uniquely identifying it with a 
+             hash code.
+        </p>
+        <ul>
+            <li>This is a simple hashing algorithm which provides a random 
+                hash value for <br> a given input.
+            </li>
+            <h3>Features:</h3>
+            <li>It takes data in string format and provides a hash 
+                for the input
+            </li>
+            <li>It can also read raw input from files.</li>
+        </ul>
+    </div>
+
+    
+    <form action="submit" method="post" id="hashform" enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>To Hashify:</legend><br>
+            <div>
+            <label>
+            <input type="radio" name="option" value="text"> text input
+            </label>
+            </div>
+            <br>
+            <div>
+            <label>
+                <input type="radio" name="option" value="file"> file input
+            </label>
+            </div>
+        </fieldset>
+        <br><br>
+        <div id="dynaip"></div>
+        <br>
+        <button type="submit" id="button">submit</button>
+    </form>
+
+
+    
+
+
+</body>
+</html>
+
+
+<script>
+    const ipt = document.getElementById("dynaip");
+    const radios = document.querySelectorAll('input[name="option"]');
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', function () {
+            ipt.innerHTML = "";
+
+            if (this.value === "text") {
+                const textobj = document.createElement("input");
+                textobj.type = "text";
+                textobj.name = "textinput";
+                textobj.placeholder = "Enter text";
+                
+                ipt.appendChild(textobj);
+            }
+
+            if (this.value === "file") {
+                const fileobj = document.createElement("input");
+                fileobj.type = "file";
+                fileobj.name = "fileinput";
+                
+                ipt.appendChild(fileobj);
+            }
+            document.getElementById('button').style.display = 'block'
+            
+            
+        });
+    });
+
+
+</script>

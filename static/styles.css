@@ -1,0 +1,207 @@
+header {
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+}
+
+header h2 {
+    font-size: 30px;
+    display: inline-block;
+    color: #ffffff; /* White */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle black shadow */
+}
+
+body {
+    /* background-image: url(/static/_e2289d5f-fb3a-46cf-870b-2e8c637eb1e6.jpg); */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    background-image: linear-gradient(
+        to bottom right,
+        #5dade2,
+        #7fb3d5,
+        #a2a3c3,
+        #c67d8f,
+        #f4d03f
+    );
+}
+
+form {
+    width: 350px;
+    position: absolute;
+    right: 100px;
+    top: 30%;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    display: none;
+    width: 30%;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 5px auto;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    
+}
+
+#info {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    position: absolute;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    top: 30%;
+    width: auto;
+}
+
+#res {
+    
+    width: 450px;
+    position: absolute;
+    right: 40px;
+    top: 30%;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#res h4{
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle black shadow */
+    margin: 10px 5px;
+}
+#res p{
+    color: rgb(153, 217, 240);
+    font-size: x-large;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle black shadow */
+    margin: 10px 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+#info ul li, h3 {
+    color: #ffffff; /* White */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle black shadow */
+    margin: 10px 5px;
+}
+#info p {
+    font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-style:italic;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    margin: 20px; /* Adjusted margin */
+    padding: 5px; /* Adjusted padding */
+    border-radius: 15px; /* Adjusted border-radius */
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    border: none;
+    width: 90%; /* Adjusted width to better fit the layout */
+    max-width: 600px; /* Set a maximum width for better scaling */
+}
+
+legend {
+    font-size: 24px; /* Adjusted font-size */
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    border-radius: 15px; /* Adjusted border-radius */
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: transparent;
+    position: relative;
+    top: 6px;
+}
+
+input[type="radio"]:checked::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: #ca8489;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: appear 0.8s;
+}
+
+label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+@keyframes appear {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        background-color: #fff;
+    }
+    45% {
+        transform: translate(-50%, -50%) scale(1.6);
+        background-color: #64aedf;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.7);
+        background-color: #ad97b3;
+    }
+    55% {
+        transform: translate(-50%, -50%) scale(1.6);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        background-color: #ca8489;
+    }
+}
