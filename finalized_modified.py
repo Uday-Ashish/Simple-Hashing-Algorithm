@@ -90,7 +90,52 @@ def calculate(data):
 # # hexval output
 
 
+def calculate_binary(data):
+    # Data is already in bytes, no need to encode
+    str_bytes = data
 
+    # Encode data to base64
+    base64_bytes = base64.b64encode(str_bytes)
+    b64str = base64_bytes.decode()
+
+    # Convert base64 string to binary representation
+    binr = ''.join(format(ord(i), '08b') for i in b64str)
+
+    # Calculate the padding for binary representation
+    p = math.ceil(len(binr) / 128)
+    N = p * 128
+    bins1 = binr.zfill(N)
+
+    # Use the length of the binary data as the seed for randomization
+    random.seed(len(str_bytes))
+
+    # Function to replace random bits with 1s
+    def replace_random(string):
+        string_list = list(string)
+        for i in random.sample(range(len(string_list)), random.randint(1, len(string_list))):
+            string_list[i] = '1'
+        return ''.join(string_list)
+
+    bins = replace_random(bins1)
+
+    # Split the binary string into chunks of 128 bits
+    cutlist = [bins[i:i+128] for i in range(0, len(bins), 128)]
+
+    if len(cutlist) > 1:
+        res2 = cutlist[-1]
+        for i in range(len(cutlist)):
+            resl = ''
+            for j in range(len(res2)):
+                x = '0' if int(res2[j]) == int(cutlist[i][j]) else '1'
+                resl += f"{x}"
+            res2 = resl
+    else:
+        res2 = bins
+
+    # Convert the final binary result to hexadecimal
+    fbin = hex(int(res2, 2))
+    fbin = fbin[2:]
+    return fbin
     
 
     

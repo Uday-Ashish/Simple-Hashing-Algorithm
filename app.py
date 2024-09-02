@@ -1,6 +1,6 @@
 from flask import Flask ,render_template , request , redirect , url_for
 import os
-from finalized_modified import calculate 
+from finalized_modified import calculate,calculate_binary 
 
 app = Flask(__name__)
 
@@ -26,9 +26,16 @@ def result():
         
         file = request.files.get('fileinput')
         if(file):
-            print('file preset')
-            data = file.read().decode('utf-8')
-            result = calculate(data)
+            print('file present')
+            try:
+                data = file.read().decode('utf-8')
+                result = calculate(data)
+            except UnicodeDecodeError:
+                result = "UnicodeDecodeError - currently only text based files are supported!!"
+                file.seek(0)
+                data= file.read()
+                result = calculate_binary(data)
+            
             print(result)
     
     return render_template('result.html',ans=result)
