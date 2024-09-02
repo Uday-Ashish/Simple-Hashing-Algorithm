@@ -40,5 +40,5 @@ def result():
     
     return render_template('result.html',ans=result)
 
-if __name__ == '__main__' :
-    app.run()
+# if __name__ == '__main__' :
+#     app.run()
